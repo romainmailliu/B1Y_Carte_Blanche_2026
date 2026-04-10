@@ -27,7 +27,7 @@ export default function ArtBlock({ artwork, index, onImageClick }: ArtBlockProps
       <div className={`flex flex-col ${isReversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-8 items-start`}>
         {/* Image principale */}
         <div
-          className="relative w-full md:w-[70%] h-[600px] overflow-hidden rounded-lg bg-surface-container-lowest img-zoom cursor-zoom-in"
+          className="relative w-full md:w-[70%] h-[300px] md:h-[600px] overflow-hidden rounded-lg bg-surface-container-lowest img-zoom cursor-zoom-in"
           onClick={() => onImageClick(artwork.id)}
         >
           <Image
@@ -62,7 +62,7 @@ export default function ArtBlock({ artwork, index, onImageClick }: ArtBlockProps
       </div>
 
       {/* Infos */}
-      <div className="mt-12 flex justify-between items-end border-t border-white/5 pt-8">
+      <div className="mt-6 md:mt-12 flex justify-between items-end border-t border-white/5 pt-6 md:pt-8">
         <div className="max-w-2xl">
           <p className="font-body text-white text-lg leading-relaxed">{artwork.description}</p>
         </div>

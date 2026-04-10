@@ -12,6 +12,7 @@ export default function Home() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [buyModalOpen, setBuyModalOpen] = useState(false)
 
+
   const handleImageClick = useCallback((artworkId: number) => {
     const index = artworks.findIndex((a) => a.id === artworkId)
     setLightboxIndex(index)
@@ -25,7 +26,7 @@ export default function Home() {
     <>
       <Navbar onBuyClick={openBuyModal} />
 
-      <main className="pt-32 pb-24 px-12 max-w-screen-2xl mx-auto space-y-32">
+      <main className="pt-28 pb-24 px-4 md:px-12 max-w-screen-2xl mx-auto space-y-16 md:space-y-32">
         {artworks.map((artwork, index) => (
           <ArtBlock
             key={artwork.id}
@@ -49,6 +50,7 @@ export default function Home() {
         open={buyModalOpen}
         onClose={closeBuyModal}
       />
+
     </>
   )
 }

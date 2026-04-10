@@ -5,7 +5,7 @@ export const artworks: Artwork[] = [
     id: 1,
     title: "Marie",
     description: "Pietra perchée. Liban, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "",
     mainImage: {
       src: "/images/marie.jpg",
@@ -25,7 +25,7 @@ export const artworks: Artwork[] = [
     title: "Temple",
     description:
       "Temple romain à la frontière Syrienne. - Baalbek ,Liban, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "Edition Unique",
     mainImage: {
       src: "/images/temple.jpg",
@@ -44,7 +44,7 @@ export const artworks: Artwork[] = [
     id: 3,
     title: "Panneau",
     description: " Panneau publicitaire en congé. Beyrouth, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "Edition Unique",
     mainImage: {
       src: "/images/panneau.jpg",
@@ -63,7 +63,7 @@ export const artworks: Artwork[] = [
     id: 4,
     title: "Soeurs",
     description: "L'habit ne fait pas le moine. New-York, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "Edition Unique",
     mainImage: {
       src: "/images/soeurs.jpg",
@@ -82,7 +82,7 @@ export const artworks: Artwork[] = [
     id: 5,
     title: "Chiens",
     description: "Attention chiends méchants. New-York, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "Edition Unique",
     mainImage: {
       src: "/images/chiens.jpg",
@@ -102,7 +102,7 @@ export const artworks: Artwork[] = [
     title: "Dian",
     description:
       "Derniers préparatifs avant un discours à l'ONU. New-York, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "Edition Unique",
     mainImage: {
       src: "/images/dian.jpg",
@@ -121,7 +121,7 @@ export const artworks: Artwork[] = [
     id: 7,
     title: "Balons",
     description: "La saison des tulipes. New-York, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "Edition Unique",
     mainImage: {
       src: "/images/balons.jpg",
@@ -141,7 +141,7 @@ export const artworks: Artwork[] = [
     id: 8,
     title: "Oiseaux",
     description: "Quand on entendait les oiseaux. Beyrouth, 2023",
-    price: "70 €",
+    price: "69 €",
     edition: "Edition Unique",
     mainImage: {
       src: "/images/oiseaux.jpg",

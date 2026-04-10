@@ -2,6 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_xkwi2nk";
+const EMAILJS_TEMPLATE_ID = "template_z789237";
+const EMAILJS_PUBLIC_KEY = "Y0Vh6DS8F21xy5zPw";
 
 interface BuyModalProps {
   open: boolean;
@@ -10,6 +15,7 @@ interface BuyModalProps {
 
 export default function BuyModal({ open, onClose }: BuyModalProps) {
   const [form, setForm] = useState({ email: "", phone: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -19,10 +25,29 @@ export default function BuyModal({ open, onClose }: BuyModalProps) {
     return () => window.removeEventListener("keydown", handleKey);
   }, [onClose]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Purchase inquiry:", form);
-    onClose();
+    setStatus("sending");
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_email: form.email,
+          phone: form.phone,
+          message: form.message,
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      setStatus("success");
+      setTimeout(() => {
+        setStatus("idle");
+        setForm({ email: "", phone: "", message: "" });
+        onClose();
+      }, 2000);
+    } catch {
+      setStatus("error");
+    }
   };
 
   const inputClass =
@@ -100,9 +125,13 @@ export default function BuyModal({ open, onClose }: BuyModalProps) {
               />
               <button
                 type="submit"
-                className="mt-2 bg-primary text-on-primary px-8 py-3 rounded-full font-body font-semibold hover:opacity-80 transition-opacity duration-500"
+                disabled={status === "sending" || status === "success"}
+                className="mt-2 bg-primary text-on-primary px-8 py-3 rounded-full font-body font-semibold hover:opacity-80 transition-opacity duration-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Envoyer
+                {status === "sending" && "Envoi en cours…"}
+                {status === "success" && "Message envoyé ✓"}
+                {status === "error" && "Erreur — réessayer"}
+                {status === "idle" && "Envoyer"}
               </button>
             </form>
           </motion.div>
