@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Artwork } from '@/types/artwork'
 
@@ -64,13 +65,16 @@ export default function Lightbox({ artworks, index, onClose, onNavigate }: Light
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.25 }}
-            className="max-w-5xl w-full h-full flex items-center justify-center"
+            className="relative max-w-5xl w-full"
+            style={{ height: '85vh' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <img
+            <Image
               src={currentArtwork.mainImage.src}
               alt={currentArtwork.mainImage.alt}
-              className="max-h-[85vh] max-w-full object-contain rounded-lg"
+              fill
+              className="object-contain rounded-lg"
+              sizes="100vw"
             />
           </motion.div>
 
@@ -85,13 +89,6 @@ export default function Lightbox({ artworks, index, onClose, onNavigate }: Light
             <span style={{ fontFamily: 'Material Symbols Outlined', fontSize: '3rem' }}>chevron_right</span>
           </button>
 
-          {/* Caption */}
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center">
-            <p className="font-headline text-white text-xl">{currentArtwork.title}</p>
-            <p className="font-label text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-1">
-              {(index as number) + 1} / {artworks.length}
-            </p>
-          </div>
         </motion.div>
       )}
     </AnimatePresence>

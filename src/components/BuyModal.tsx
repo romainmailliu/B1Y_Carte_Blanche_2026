@@ -1,31 +1,32 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface BuyModalProps {
-  open: boolean
-  onClose: () => void
+  open: boolean;
+  onClose: () => void;
 }
 
 export default function BuyModal({ open, onClose }: BuyModalProps) {
-  const [form, setForm] = useState({ email: '', phone: '', message: '' })
+  const [form, setForm] = useState({ email: "", phone: "", message: "" });
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
-    }
-    window.addEventListener('keydown', handleKey)
-    return () => window.removeEventListener('keydown', handleKey)
-  }, [onClose])
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, [onClose]);
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Purchase inquiry:', form)
-    onClose()
-  }
+    e.preventDefault();
+    console.log("Purchase inquiry:", form);
+    onClose();
+  };
 
-  const inputClass = "w-full bg-surface-container-highest text-on-surface placeholder:text-on-surface-variant rounded-lg px-4 py-3 outline-none focus:outline focus:outline-1 focus:outline-outline-variant font-body text-base"
+  const inputClass =
+    "w-full bg-surface-container-highest text-on-surface placeholder:text-on-surface-variant rounded-lg px-4 py-3 outline-none focus:outline focus:outline-1 focus:outline-outline-variant font-body text-base";
 
   return (
     <AnimatePresence>
@@ -49,16 +50,26 @@ export default function BuyModal({ open, onClose }: BuyModalProps) {
             {/* Header */}
             <div className="flex justify-between items-start mb-8">
               <div>
-                <h2 className="font-headline text-2xl text-white italic">Acquérir une œuvre</h2>
+                <h2 className="font-headline text-2xl text-white italic">
+                  Acheter une photo. Toutes les recettes sont reversées à la
+                  Croix-Rouge Libanaise.
+                </h2>
                 <p className="font-label text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-2">
-                  Nous vous recontacterons sous 48h
+                  Nous vous recontacterons bientôt
                 </p>
               </div>
               <button
                 onClick={onClose}
                 className="text-neutral-500 hover:text-white transition-colors"
               >
-                <span style={{ fontFamily: 'Material Symbols Outlined', fontSize: '1.5rem' }}>close</span>
+                <span
+                  style={{
+                    fontFamily: "Material Symbols Outlined",
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  close
+                </span>
               </button>
             </div>
 
@@ -80,7 +91,7 @@ export default function BuyModal({ open, onClose }: BuyModalProps) {
                 className={inputClass}
               />
               <textarea
-                placeholder="Message (œuvre souhaitée, budget, questions...)"
+                placeholder="Message (photo souhaitée, questions...)"
                 required
                 rows={4}
                 value={form.message}
@@ -91,12 +102,12 @@ export default function BuyModal({ open, onClose }: BuyModalProps) {
                 type="submit"
                 className="mt-2 bg-primary text-on-primary px-8 py-3 rounded-full font-body font-semibold hover:opacity-80 transition-opacity duration-500"
               >
-                Envoyer la demande
+                Envoyer
               </button>
             </form>
           </motion.div>
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

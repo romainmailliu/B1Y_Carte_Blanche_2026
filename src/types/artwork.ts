@@ -13,6 +13,7 @@ export interface Artwork {
   mainImage: {
     src: string
     alt: string
+    eager?: boolean
   }
   thumbnails: [ArtworkThumbnail, ArtworkThumbnail]
 }

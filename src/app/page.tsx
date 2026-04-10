@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import Navbar from '@/components/Navbar'
 import ArtBlock from '@/components/ArtBlock'
 import Lightbox from '@/components/Lightbox'
@@ -12,14 +12,18 @@ export default function Home() {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
   const [buyModalOpen, setBuyModalOpen] = useState(false)
 
-  const handleImageClick = (artworkId: number) => {
+  const handleImageClick = useCallback((artworkId: number) => {
     const index = artworks.findIndex((a) => a.id === artworkId)
     setLightboxIndex(index)
-  }
+  }, [])
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), [])
+  const closeBuyModal = useCallback(() => setBuyModalOpen(false), [])
+  const openBuyModal = useCallback(() => setBuyModalOpen(true), [])
 
   return (
     <>
-      <Navbar onBuyClick={() => setBuyModalOpen(true)} />
+      <Navbar onBuyClick={openBuyModal} />
 
       <main className="pt-32 pb-24 px-12 max-w-screen-2xl mx-auto space-y-32">
         {artworks.map((artwork, index) => (
@@ -37,13 +41,13 @@ export default function Home() {
       <Lightbox
         artworks={artworks}
         index={lightboxIndex}
-        onClose={() => setLightboxIndex(null)}
+        onClose={closeLightbox}
         onNavigate={setLightboxIndex}
       />
 
       <BuyModal
         open={buyModalOpen}
-        onClose={() => setBuyModalOpen(false)}
+        onClose={closeBuyModal}
       />
     </>
   )
