@@ -18,8 +18,35 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'The Shadow Curator',
-  description: "Galerie photographique éditoriale — tirages d'art limités",
+  title: 'Berlin in One Year — Carte Blanche pour le Liban',
+  description:
+    "Galerie photographique de Virgile Loiseau. Tirages d'art limités issus du film documentaire I AM THE FUTURE. Toutes les recettes sont reversées à la Croix-Rouge Libanaise.",
+  keywords: [
+    'Berlin in One Year',
+    'Carte Blanche',
+    'Liban',
+    'photographie',
+    'tirages d\'art',
+    'Croix-Rouge Libanaise',
+    'Virgile Loiseau',
+    'I AM THE FUTURE',
+    'galerie photo',
+  ],
+  authors: [{ name: 'Virgile Loiseau' }],
+  openGraph: {
+    title: 'Berlin in One Year — Carte Blanche pour le Liban',
+    description:
+      "Tirages d'art limités de Virgile Loiseau. Toutes les recettes sont reversées à la Croix-Rouge Libanaise.",
+    siteName: 'Berlin in One Year',
+    locale: 'fr_FR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Berlin in One Year — Carte Blanche pour le Liban',
+    description:
+      "Tirages d'art limités de Virgile Loiseau. Toutes les recettes sont reversées à la Croix-Rouge Libanaise.",
+  },
 }
 
 export default function RootLayout({
