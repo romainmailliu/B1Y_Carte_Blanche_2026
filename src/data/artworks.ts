@@ -23,8 +23,7 @@ export const artworks: Artwork[] = [
   {
     id: 2,
     title: "Temple",
-    description:
-      "Temple romain à la frontière Syrienne. - Baalbek ,Liban, 2023",
+    description: "Temple romain à la frontière Syrienne. Baalbek, Liban, 2023",
     price: "69 €",
     edition: "Edition Unique",
     mainImage: {
@@ -62,7 +61,7 @@ export const artworks: Artwork[] = [
   {
     id: 4,
     title: "Soeurs",
-    description: "L'habit ne fait pas le moine. New-York, 2023",
+    description: "L'habit ne fait pas le moine. New York, 2023",
     price: "69 €",
     edition: "Edition Unique",
     mainImage: {
@@ -81,7 +80,7 @@ export const artworks: Artwork[] = [
   {
     id: 5,
     title: "Chiens",
-    description: "Attention chiends méchants. New-York, 2023",
+    description: "Attention chiends méchants. New York, 2023",
     price: "69 €",
     edition: "Edition Unique",
     mainImage: {
@@ -101,7 +100,7 @@ export const artworks: Artwork[] = [
     id: 6,
     title: "Dian",
     description:
-      "Derniers préparatifs avant un discours à l'ONU. New-York, 2023",
+      "Derniers préparatifs avant un discours à l'ONU. New York, 2023",
     price: "69 €",
     edition: "Edition Unique",
     mainImage: {
@@ -120,7 +119,7 @@ export const artworks: Artwork[] = [
   {
     id: 7,
     title: "Balons",
-    description: "La saison des tulipes. New-York, 2023",
+    description: "La saison des tulipes. New York, 2023",
     price: "69 €",
     edition: "Edition Unique",
     mainImage: {
