@@ -15,7 +15,9 @@ interface BuyModalProps {
 
 export default function BuyModal({ open, onClose }: BuyModalProps) {
   const [form, setForm] = useState({ email: "", phone: "", message: "" });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "sending" | "success" | "error"
+  >("idle");
 
   useEffect(() => {
     const handleKey = (e: KeyboardEvent) => {
@@ -37,7 +39,7 @@ export default function BuyModal({ open, onClose }: BuyModalProps) {
           phone: form.phone,
           message: form.message,
         },
-        EMAILJS_PUBLIC_KEY
+        EMAILJS_PUBLIC_KEY,
       );
       setStatus("success");
       setTimeout(() => {
@@ -76,8 +78,7 @@ export default function BuyModal({ open, onClose }: BuyModalProps) {
             <div className="flex justify-between items-start mb-8">
               <div>
                 <h2 className="font-headline text-2xl text-white italic">
-                  Acheter une photo. Toutes les recettes sont reversées à la
-                  Croix-Rouge Libanaise.
+                  Toutes les recettes sont reversées à la Croix-Rouge Libanaise.
                 </h2>
                 <p className="font-label text-[10px] uppercase tracking-[0.2em] text-neutral-500 mt-2">
                   Nous vous recontacterons bientôt
