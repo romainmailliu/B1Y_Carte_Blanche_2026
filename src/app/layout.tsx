@@ -18,7 +18,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Berlin in One Year — Carte Blanche pour le Liban',
+  title: 'B1Y — Carte Blanche pour le Liban',
   description:
     "Galerie photographique de Virgile Loiseau. Tirages d'art limités issus du film documentaire I AM THE FUTURE. Toutes les recettes sont reversées à la Croix-Rouge Libanaise.",
   keywords: [
@@ -34,16 +34,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Virgile Loiseau' }],
   openGraph: {
-    title: 'Berlin in One Year — Carte Blanche pour le Liban',
+    title: 'B1Y — Carte Blanche pour le Liban',
     description:
       "Tirages d'art limités de Virgile Loiseau. Toutes les recettes sont reversées à la Croix-Rouge Libanaise.",
-    siteName: 'Berlin in One Year',
+    siteName: 'B1Y',
     locale: 'fr_FR',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Berlin in One Year — Carte Blanche pour le Liban',
+    title: 'B1Y — Carte Blanche pour le Liban',
     description:
       "Tirages d'art limités de Virgile Loiseau. Toutes les recettes sont reversées à la Croix-Rouge Libanaise.",
   },
